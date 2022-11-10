@@ -62,7 +62,7 @@ def game_scene():
 
     # A button to fire
         if keys & ugame.K_X != 0:
-            if a_button == constants.button_state["button_up"]
+            if a_button == constants.button_state["button_up"]:
                 a_button = constants.button_state["button_just_pressed"]
             elif a_button == constants.button_state["button_just_pressed"]:
                 a_button = constants.button_state["button_still_pressed"]
