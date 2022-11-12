@@ -85,7 +85,7 @@ def game_scene():
                 ship.move(0, ship.y)
 
         # update game logic
-        # play sound if A was just buttpm_just_pressed
+        # play sound if A was just button_just_pressed
         if a_button == constants.button_state["button_just_pressed"]:
             sound.play(pew_sound)
 
