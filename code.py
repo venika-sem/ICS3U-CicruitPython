@@ -17,10 +17,10 @@ def game_scene():
     image_bank_sprites = stage.Bank.from_bmp16("space_aliens.bmp")
 
     # buttons that you want to keep state information on
-    a_button = constans.button_state["button_up"]
-    b_button = constans.button_state["button_up"]
-    start_button = constans.button_state["button_up"]
-    select_button = constans.button_state["button_up"]
+    a_button = constants.button_state["button_up"]
+    b_button = constants.button_state["button_up"]
+    start_button = constants.button_state["button_up"]
+    select_button = constants.button_state["button_up"]
 
     # get sound ready
     pew_sound = open("pew.wav", "rb")
