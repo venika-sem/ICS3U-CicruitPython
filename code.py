@@ -15,7 +15,8 @@ def game_scene():
     # image banks for Cicruit Python
     image_bank_background = stage.Bank.from_bmp16("space_aliens_background.bmp")
     image_bank_sprites = stage.Bank.from_bmp16("space_aliens.bmp")
-    
+
+
     # buttons that you want to keep state information on
     a_button = constans.button_state["button_up"]
     b_button = constans.button_state["button_up"]
@@ -49,7 +50,7 @@ def game_scene():
     game = stage.Stage(ugame.display, 60)
 
     # set layers of all sprites, items show up in  order
-    game.layers = [ship] + [alien] [background]
+    game.layers = [ship] + [alien][background]
 
     # render all sprites
     # most likely you will only render the backgrounf once per gaem scene
@@ -60,7 +61,7 @@ def game_scene():
         # get user input
         keys = ugame.buttons.get_pressed()
 
-    # A button to fire
+        # A button to fire
         if keys & ugame.K_X != 0:
             if a_button == constants.button_state["button_up"]:
                 a_button = constants.button_state["button_just_pressed"]
@@ -88,10 +89,10 @@ def game_scene():
         # play sound if A was just buttpm_just_pressed
         if a_button == constants.button_state["button_just_pressed"]:
             sound.play(pew_sound)
-        
-        #redraw Sprite
+
+        # redraw Sprite
         game.render_sprites([ship] + [alien])
-        game.tick() #wait until refesh rate finishes
+        game.tick() # wait until refesh rate finishes
 
 
 if __name__ == "__main__":
