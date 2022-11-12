@@ -16,7 +16,6 @@ def game_scene():
     image_bank_background = stage.Bank.from_bmp16("space_aliens_background.bmp")
     image_bank_sprites = stage.Bank.from_bmp16("space_aliens.bmp")
 
-
     # buttons that you want to keep state information on
     a_button = constans.button_state["button_up"]
     b_button = constans.button_state["button_up"]
@@ -92,7 +91,7 @@ def game_scene():
 
         # redraw Sprite
         game.render_sprites([ship] + [alien])
-        game.tick() # wait until refesh rate finishes
+        game.tick()  # wait until refesh rate finishes
 
 
 if __name__ == "__main__":
