@@ -2,7 +2,7 @@
 
 # Created by: Venika Sem
 # Created on: Nov 2022
-# This program is the "Space Aliens" program on the PyBadge.
+# This program is the "Space Aliens" program on the PyBadge
 
 import random
 import time
@@ -16,7 +16,7 @@ def splash_scene():
     # this function is the splash scene game loop
 
     # get sound ready
-    coin_sound = open("coin.wav", "rb")
+    coin_sound = open("con.wav", "rb")
     sound = ugame.audio
     sound.stop()
     sound.mute(False)
@@ -121,8 +121,8 @@ def menu_scene():
 
 def game_scene():
     # This function is the main game game_scene
-
-     def show_alien():
+   
+    def show_alien():
         # this function takes an alien from off screen and moves it on screen
         for alien_number in range(len(aliens)):
             if aliens[alien_number].x < 0:
@@ -160,7 +160,7 @@ def game_scene():
         image_bank_sprites, 5, 75, constants.SCREEN_Y - (2 * constants.SPRITE_SIZE)
     )
 
-     # create list of lasers for when we shoot
+    # create list of lasers for when we shoot
     aliens = []
     for alien_number in range(constants.TOTAL_NUMBER_OF_ALIENS):
         a_single_alien = stage.Sprite(image_bank_sprites, 9,
@@ -179,8 +179,8 @@ def game_scene():
         lasers.append(a_single_laser)
 
     # create a stage for the background to show up on
-    #  and set the frame rate to 60 fps
-    game = stage.Stage(ugame.display, constants.FPS)
+    #   and set the frame rate to 60 fps
+    game = stage.Stage(ugame.display, 60)
     # set the layers of all sprites, items show up in order
     game.layers = aliens + lasers + [ship]  + [background]
     # render all sprites
@@ -212,7 +212,7 @@ def game_scene():
                ship.move((ship.x - constants.SPRITE_MOVEMENT_SPEED), ship.y)
             else:
                ship.move(0, ship.y)
-
+       
         # update game logic
         # play sound if A was just button_just_pressed
         if a_button == constants.button_state["button_just_pressed"]:
@@ -232,7 +232,7 @@ def game_scene():
                 if lasers[laser_number].y < constants.OFF_TOP_SCREEN:
                     lasers[laser_number].move(constants.OFF_SCREEN_X,
                                             constants.OFF_SCREEN_Y)
-                            
+                                     
         # each frame move the aliens down, that are on the screen
         for alien_number in rnage(len(aliens)):
             if aliens[alien_number].x > 0:
