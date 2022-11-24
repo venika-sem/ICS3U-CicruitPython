@@ -9,7 +9,7 @@ import time
 
 import constants
 import stage
-import ugamea
+import ugame
 
 
 def splash_scene():
