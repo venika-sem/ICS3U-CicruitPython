@@ -2,9 +2,9 @@
 
 # Created by: Venika Sem
 # Created on: Nov 2022
-# This is the constants file
+# This constants file is for Space Alien game
 
-# Pybadge screen size is 160x128 and sprites are 16x16
+# PyBadge screen size is 160x128 and sprites are 16x16
 SCREEN_X = 160
 SCREEN_Y = 128
 SCREEN_GRID_X = 10
@@ -29,8 +29,17 @@ button_state = {
     "button_still_pressed": "still pressed",
     "button_released": "released",
 }
+<<<<<<< HEAD
+# new pallet for red filled text
+RED_PALETTE = (
+    b"\xff\xff\x00\x22\xcey\x22\xff\xff\xff\xff\xff\xff\xff\xff\xff"
+    b"\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff"
+)
+=======
 # new pallet for filled text
 RED_PALETTE = (
     b"\xff\xff\x00\x22\xcey\x22\xff\xff\xff\xff\xff\xff\xff\xff\xff"
     b"\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff"
 )
+
+>>>>>>> 1ddd98ea1c197d3f6b418adedcde657b13f1dd04

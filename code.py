@@ -2,7 +2,7 @@
 
 # Created by: Venika Sem
 # Created on: Nov 2022
-# This program is the "Space Aliens" program  on the PyBadge
+# This program is the "Space Aliens" program on the PyBadge.
 
 import random
 import time
@@ -122,6 +122,11 @@ def menu_scene():
 def game_scene():
     # This function is the main game game_scene
 
+<<<<<<< HEAD
+    # for score
+    alien_count = 0
+    score = 0
+
     def show_alien():
         # this function takes an alien from off screen and moves it on screen
         for alien_number in range(len(aliens)):
@@ -135,6 +140,21 @@ def game_scene():
                 )
                 break
 
+=======
+    def show_alien():
+        # this function takes an alien from off screen and moves it on screen
+        for alien_number in range(len(aliens)):
+            if aliens[alien_number].x < 0:
+                aliens[alien_number].move(
+                    random.randint(
+                        0 + constants.SPRITE_SIZE,
+                        constants.SCREEN_X - constants.SPRITE_SIZE,
+                    ),
+                    constants.OFF_TOP_SCREEN,
+                )
+                break
+
+>>>>>>> 1ddd98ea1c197d3f6b418adedcde657b13f1dd04
     image_bank_background = stage.Bank.from_bmp16("space_aliens_background.bmp")
     image_bank_sprites = stage.Bank.from_bmp16("space_aliens.bmp")
 
@@ -146,6 +166,7 @@ def game_scene():
 
     # get sound ready
     pew_sound = open("pew.wav", "rb")
+    boom_sound = open("boom.wav", "rb")
     sound = ugame.audio
     sound.stop()
     sound.mute(False)
@@ -263,9 +284,47 @@ def game_scene():
                     )
                     show_alien()
 
+<<<<<<< HEAD
+        # each frame check if any of the lasers are touching any of the aliens
+        for laser_number in range(len(lasers)):
+            if lasers[laser_number].x > 0:
+                for alien_number in range(len(aliens)):
+                    if aliens[alien_number].x > 0:
+                        if stage.collide(
+                            lasers[laser_number].x + 6,
+                            lasers[laser_number].y + 2,
+                            lasers[laser_number].x + 11,
+                            lasers[laser_number].y + 12,
+                            aliens[alien_number].x + 1,
+                            aliens[alien_number].y,
+                            aliens[alien_number].x + 15,
+                            aliens[alien_number].y + 15,
+                        ):
+                            # you hit an alien
+                            aliens[alien_number].move(
+                                constants.OFF_SCREEN_X, constants.OFF_SCREEN_Y
+                            )
+                            lasers[laser_number].move(
+                                constants.OFF_SCREEN_X, constants.OFF_SCREEN_Y
+                            )
+                            sound.stop()
+                            sound.play(boom_sound)
+                            show_alien()
+                            show_alien()
+                            alien_count = alien_count + 1
+                            score = score + 1
+=======
+        game.render_sprites(aliens + lasers + [ship])
+        game.tick()
+>>>>>>> 1ddd98ea1c197d3f6b418adedcde657b13f1dd04
+
+<<<<<<< HEAD
         game.render_sprites(aliens + lasers + [ship])
         game.tick()
 
 
+=======
+
+>>>>>>> 1ddd98ea1c197d3f6b418adedcde657b13f1dd04
 if __name__ == "__main__":
     splash_scene()
