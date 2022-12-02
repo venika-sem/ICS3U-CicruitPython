@@ -6,9 +6,10 @@
 
 import random
 import time
-import supervisor
+
 import constants
 import stage
+import supervisor
 import ugame
 
 
